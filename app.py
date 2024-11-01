@@ -10,5 +10,6 @@ from models import Usuario, Pizza, Pedido
 db.init_app(app)
 
 migrate = Migrate(app, db)
-from modulos.usuario import bp_usuario
+from modulos.usuarios.usuarios import bp_usuario
+
 app.register_blueprint(bp_usuario, url_prefix='/usuarios')
