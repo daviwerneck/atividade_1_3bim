@@ -4,12 +4,12 @@ from database import db
 
 bp_pizza = Blueprint('pizzas', __name__, template_folder='templates')
 
-@bp_pizza.route('/pizzas')
+@bp_pizza.route('/')
 def index():
     dados = Pizza.query.all()
     return render_template('pizza.html', pizzas = dados)
 
-@bp_pizza.route('/pizzas/add')
+@bp_pizza.route('/add')
 def add():
     return render_template('pizza_add.html')
 

@@ -11,26 +11,19 @@
     {% endif %}
     <form action="/pizzas/save" method="post">
         <div>
-            <label for="nome">Nome: </label>
-            <select name="usuario_id" id="nome" required>
-                <option value=""></option>
-                {% for u in usuarios %}
-                <option value="{{u.id}}">{{u.nome}}</option>
-                {% endfor %}
-            </select>
+            <label for="sabor">Sabor: </label>
+            <input type="text" name="sabor" id="sabor" required>
+        </input>
         </div>
         <div>
-            <label for="pizza">Pizza: </label>
-            <select name="pizza_id" id="pizza" required>
-                <option value=""></option>
-                {% for p in pizzas %}
-                <option value="{{p.id}}">{{p.sabor}}</option>
-                {% endfor %}
-            </select>
+            <label for="ingredientes">Ingredientes: </label>
+            <input type="text" name="ingredientes" id="ingredientes" required>
+        </input>
         </div>
         <div>
-            <label for="data">Data: </label>
-            <input type="date" name="data" id="data" required>
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" id="preco" required>
+        </input>
         </div>
         <button type="submit">Salvar</button>
     </form>
