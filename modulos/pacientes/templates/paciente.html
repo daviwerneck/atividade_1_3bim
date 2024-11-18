@@ -10,19 +10,19 @@
         {% endfor %}
     {% endif %}
     <div>
-        <a href="/usuarios/add">Adicionar</a>
+        <a href="/pacientes/add">Adicionar</a>
     </div>
     <table>
         <tr>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
+            <th>Idade</th>
+            <th>Médico</th>
         </tr>
-        {% for u in usuarios %}
+        {% for p in pacientes %}
         <tr>
-            <td>{{u.nome}}</td>
-            <td>{{u.email}}</td>
-            <td>{{u.senha}}</td>
+            <td>{{p.nome}}</td>
+            <td>{{p.idade}}</td>
+            <td>{{p.id_medico}}</td>
         </tr>
         {% endfor %}
     </table>

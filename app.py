@@ -6,17 +6,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 from database import db
 from flask_migrate import Migrate
-from models import Usuario, Pizza, Pedido
+from models import Medico, Paciente
 db.init_app(app)
 migrate = Migrate(app, db)
-from modulos.usuarios.usuarios import bp_usuario
-app.register_blueprint(bp_usuario, url_prefix='/usuarios')
+from modulos.medicos.medicos import bp_medico
+app.register_blueprint(bp_medico, url_prefix='/medicos')
 
-from modulos.pedidos.pedidos import bp_pedido
-app.register_blueprint(bp_pedido, url_prefix='/pedidos')
 
-from modulos.pizzas.pizzas import bp_pizza
-app.register_blueprint(bp_pizza, url_prefix='/pizzas')
+from modulos.pacientes.pacientes import bp_paciente
+app.register_blueprint(bp_paciente, url_prefix='/pacientes')
 
 @app.route('/')
 def index():

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/pacientes/save" method="post">
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" required>
+        </input>
+        </div>
+        <div>
+            <label for="idade">Idade: </label>
+            <input type="number" name="idade" id="idade" required>
+        </input>
+        </div>
+        <div>
+            <label for="id_medico">Médico: </label>
+            <select name="id_medico" id="id_medico" required>
+                <option value=""></option>
+                {% for m in medicos %}
+                <option value="{{m.id_medico}}">{{m.nome}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+
+{% endblock %}
