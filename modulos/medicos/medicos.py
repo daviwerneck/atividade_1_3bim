@@ -27,7 +27,38 @@ def save():
         flash('Preencha todos os campos!!!')
         return redirect('/medicos/add')
 
+@bp_medico.route('/edit/<int:id_medico>')
+def edit(id_medico):
+    dados = Medico.query.get(id_medico)
+    return render_template('medico_edit.html', medicos = dados)
 
+@bp_medico.route('/remove/<int:id_medico>')
+def remove(id_medico):
+    dados = Medico.query.get(id_medico)
+    if id_medico > 0:
+        db.session.delete(dados)
+        db.session.commit()
+        flash('Médico removido com sucesso!')
+        return redirect('/medicos')
+    else:
+        flash("Ops! ID inválido!")
+        return redirect("/medicos")
+
+@bp_medico.route('/editsave', methods=['POST'])
+def editsave():
+    id_medico = request.form.get('id_medico')
+    nome = request.form.get('nome')
+    especialidade = request.form.get('especialidade')
+    if id_medico and nome and especialidade:
+        medico = Medico.query.get(id_medico)
+        medico.nome = nome
+        medico.especialidade = especialidade
+        db.session.commit()
+        flash('Dados editados com sucesso!!!')
+        return redirect('/medicos')
+    else:
+        flash('Preencha todos os campos!!!')
+        return redirect('/medicos')
 
 
 

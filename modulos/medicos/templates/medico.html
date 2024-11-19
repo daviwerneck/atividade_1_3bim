@@ -16,11 +16,15 @@
         <tr>
             <th>Nome</th>
             <th>Especialidade</th>
+            <th>Editar</th>
+            <th>Remover</th>
         </tr>
         {% for m in medicos %}
         <tr>
             <td>{{m.nome}}</td>
             <td>{{m.especialidade}}</td>
+            <td><a href="edit/{{m.id_medico}}">Editar</a></td>
+            <td><a href="remove/{{m.id_medico}}">Remover</a></td>
         </tr>
         {% endfor %}
     </table>

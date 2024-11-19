@@ -17,12 +17,16 @@
             <th>Nome</th>
             <th>Idade</th>
             <th>Médico</th>
+            <th>Editar</th>
+            <th>Remover</th>
         </tr>
         {% for p in pacientes %}
         <tr>
             <td>{{p.nome}}</td>
             <td>{{p.idade}}</td>
             <td>{{p.id_medico}}</td>
+            <td><a href="edit/{{p.id_paciente}}">Editar</a></td>
+            <td><a href="remove/{{p.id_paciente}}">Remover</a></td>
         </tr>
         {% endfor %}
     </table>
