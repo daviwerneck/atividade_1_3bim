@@ -1,0 +1,128 @@
+/* Resetando algumas configurações padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --blue: #00bfff;
+    --orange: #f0a500;
+}
+
+/* Estilo para o body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo para o header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    padding: 1rem 0;
+    height: 3rem;
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.5s ease;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+/* Estilo para o main */
+main {
+    min-height: calc(100vh - 5rem);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+    max-width: 1200px;
+}
+
+main section{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-top:2rem;
+}
+
+img{
+    height: 18rem;
+}
+
+main table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+table, tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 2rem;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}

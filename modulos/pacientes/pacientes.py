@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, flash
-from models import Paciente
-from models import Medico
+from models import Paciente, Medico
 from database import db
 
 bp_paciente = Blueprint('pacientes', __name__, template_folder='templates')
