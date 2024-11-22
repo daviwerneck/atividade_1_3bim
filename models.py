@@ -21,6 +21,8 @@ class Paciente(db.Model):
     idade = db.Column(db.Integer)
     id_medico = db.Column(db.Integer, db.ForeignKey('medico.id_medico'))
 
+    medico = db.relationship('Medico', foreign_keys=id_medico)
+
     def __init__(self, nome, idade, id_medico):
         self.nome = nome
         self.idade = idade
